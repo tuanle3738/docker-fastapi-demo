@@ -4,26 +4,15 @@ services:
   db:
     image: postgres
     environment:
-      POSTGRES_USER: eclass
-      POSTGRES_PASSWORD: Ecl@SS
-      POSTGRES_DB: eclass
-    volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      POSTGRES_USER: tl37
+      POSTGRES_PASSWORD: tl@37
+      POSTGRES_DB: tl37
     ports:
       - "54321:54321"
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    environment:
-      AUTHORIZATION_ISSUER: "https://gitlab.ftech.ai/"
-      DATABASE_NAME: eclass
-      DATABASE_HOST: db
-      DATABASE_USER: eclass
-      DATABASE_PASSWORD: Ecl@SS
-      DATABASE_PORT: 5432
-    volumes:
-      - ./apps:/code/apps
     ports:
       - "80:80"
     depends_on:
