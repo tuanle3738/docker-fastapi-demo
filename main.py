@@ -99,7 +99,3 @@ def get_odd_id():
             return students[student_id]
 
     return {"Error": "None"}
-
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
