@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: tl37
+      POSTGRES_PASSWORD: tl@37
+      POSTGRES_DB: tl37
+    ports:
+      - "54321:54321"
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - db
